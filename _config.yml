@@ -17,6 +17,10 @@ rss: rss
 #youtube_username: jekyll
 #googleplus_username: +jekyll
 
+#jekyll seo tag 
+twitter:
+  username: bekircem
+
 # Permalinks
 permalink:        '/:year/:month/:title/'
 
@@ -34,6 +38,10 @@ minima:
 
 disqus:
   shortname: bekircem
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
 
 # Build settings
 markdown: kramdown
