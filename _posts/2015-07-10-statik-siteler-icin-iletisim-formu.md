@@ -76,11 +76,11 @@ Burada `action` niteliğini form elementinden kaldırdık ve formun altına ekle
 ### Formu Onaylama
 Formu oluşturduktan sonraki son adımda formumuzun bulunduğu sayfayı internet tarayıcısından ziyaret ederek formumuzdan örnek bir ileti göndereceğiz ve ardından gelen pencerede formumuza tanımladığımız mail adresini onaylayacağız. 
 
-![Formspree Onay](http://bekircem.github.io/images/confirm.png)
+![Formspree Onay](/images/confirm.png)
 
 Mail adresinize gelen onay linkine tıkladıktan sonra onaylama işlemi tamamlanacak. 
 
-![Formspree Onaylandı](http://bekircem.github.io/images/confirmed.png)
+![Formspree Onaylandı](/images/confirmed.png)
 
 **Not:** Bu onaylama işlemini formu yeni bir sayfaya eklediğinizde tekrar yapmanız gerekir. 
 
