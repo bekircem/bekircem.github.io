@@ -1,5 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-28T16:39:54+03:00</updated><id>http://localhost:4000/</id><title type="html">bekircem</title><subtitle>Geliştirme deneyimlerimle ilgili notlarım.
-</subtitle><author><name>Bekir Cem Ünalan</name></author><entry><title type="html">OpenVPN ile VPN Sunucusu Kurmak</title><link href="http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak/" rel="alternate" type="text/html" title="OpenVPN ile VPN Sunucusu Kurmak" /><published>2015-07-25T00:00:00+03:00</published><updated>2015-07-25T00:00:00+03:00</updated><id>http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak</id><content type="html" xml:base="http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak/">&lt;p&gt;Dün geceden itibaren internette genel anlamda bir yavaşlık olması ve özellikle Facebook, Twitter, Youtube gibi mecralara erişimde kesintiler yaşanması sebebiyle VPN kullanma ihtiyacı duydum. IPVanish, Hidemyass gibi VPN servislerini daha önceden kullanmıştım. Ancak bu servisleri istediğim zaman pasifleştirip aktifleştiremediğim ve isteğime göre yapılandıramadığım için bu sefer tercih etmedim. Bu rehberde yapılabilecek en basit haliyle kendi sanal sunucunuzu nasıl VPN servisi haline getirebileceğinizi anlatacağım.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-28T16:53:17+03:00</updated><id>http://localhost:4000/</id><title type="html">bekircem</title><subtitle>Geliştirme deneyimlerimle ilgili notlarım.
+</subtitle><author><name>Bekir Cem Ünalan</name></author><entry><title type="html">Discourse tüm mesajlarda bir string ifade değiştirmek</title><link href="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/" rel="alternate" type="text/html" title="Discourse tüm mesajlarda bir string ifade değiştirmek" /><published>2018-01-28T00:00:00+03:00</published><updated>2018-01-28T00:00:00+03:00</updated><id>http://localhost:4000/2018/01/discourse-rake-posts-kullanimi</id><content type="html" xml:base="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/">&lt;p&gt;Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse’un import script’ini kullandım. 300.000’in üzerinde mesaj ve 10.000’in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse’un ‘rake posts’ özelliğini kullandım.&lt;/p&gt;
+
+&lt;p&gt;Öncelikle SSH üzerinden sunucuya bağlanıyoruz ve Docker container’ımıza giriyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /var/discourse
+./launcher enter app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Docker container’ımıza giriş yaptıktan sonra ihtiyacımıza göre kullanabileceğimiz iki farklı rake posts komutu var. String ifadeyi başka bir string ifadeyle değiştirmek istiyorsak remap, string ifadeyi silmek istiyorsak delete_word kullanacağız.&lt;/p&gt;
+
+&lt;p&gt;Spesifik bir string ifadesini değiştirmek&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake posts:remap[&quot;bul&quot;,&quot;degistir&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Örnek:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake posts:remap[&quot;:slightly_smiling:&quot;,&quot;:slight_smile:&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Bir string’i silmek için delete_word kullanıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake posts:delete_word[&quot;silinecek-string&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Değiştirmek ya da silmek istediğimiz string virgül içeriyorsa virgülün komut işlemi görmesini engellemek için “\” kullanmamız gerekiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake posts: delete_word[“elma\,\ armut”]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Bekir Cem Ünalan</name></author><summary type="html">Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse’un import script’ini kullandım. 300.000’in üzerinde mesaj ve 10.000’in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse’un ‘rake posts’ özelliğini kullandım.</summary></entry><entry><title type="html">OpenVPN ile VPN Sunucusu Kurmak</title><link href="http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak/" rel="alternate" type="text/html" title="OpenVPN ile VPN Sunucusu Kurmak" /><published>2015-07-25T00:00:00+03:00</published><updated>2015-07-25T00:00:00+03:00</updated><id>http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak</id><content type="html" xml:base="http://localhost:4000/2015/07/openvpn-ile-vpn-sunucusu-kurmak/">&lt;p&gt;Dün geceden itibaren internette genel anlamda bir yavaşlık olması ve özellikle Facebook, Twitter, Youtube gibi mecralara erişimde kesintiler yaşanması sebebiyle VPN kullanma ihtiyacı duydum. IPVanish, Hidemyass gibi VPN servislerini daha önceden kullanmıştım. Ancak bu servisleri istediğim zaman pasifleştirip aktifleştiremediğim ve isteğime göre yapılandıramadığım için bu sefer tercih etmedim. Bu rehberde yapılabilecek en basit haliyle kendi sanal sunucunuzu nasıl VPN servisi haline getirebileceğinizi anlatacağım.&lt;/p&gt;
 
 &lt;p&gt;Bu rehberde geliştiriciler için cloud hizmeti sunan &lt;a href=&quot;http://www.digitalocean.com&quot; target=&quot;_blank&quot;&gt;Digital Ocean&lt;/a&gt; VPS’lerinden 5 dolarlık VPS paketini kullandım. (VPN için 5 dolarlık paket fazlasıyla yeterli.)&lt;/p&gt;
 
