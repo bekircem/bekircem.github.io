@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Discourse tüm mesajlarda bir string ifade değiştirmek"
+title: "Discourse Tüm Mesajlarda Bir String İfade Değiştirmek"
 description: "Discourse rake posts özelliğini kullanarak tüm mesajlarda bir string ifadeyi değiştirmek"
 keywords: "Discourse, Ruby"
 tags: [Discourse]

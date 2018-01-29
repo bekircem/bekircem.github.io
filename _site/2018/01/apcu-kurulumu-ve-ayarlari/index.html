@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@bekircem">
+<meta name="twitter:creator" content="@bekircem">
+
+  <meta name="twitter:title" content="APCu Kurulumu ve Ayarları">
+
+
+  <meta name="twitter:url" content="http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/">
+
+
+  <meta name="twitter:description" content="PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı.">
+
+
+  <!-- Twitter cards metadatas -->
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>APCu Kurulumu ve Ayarları | bekircem</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="APCu Kurulumu ve Ayarları" />
+<meta name="author" content="Bekir Cem Ünalan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı." />
+<meta property="og:description" content="PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı." />
+<link rel="canonical" href="http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/" />
+<meta property="og:url" content="http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/" />
+<meta property="og:site_name" content="bekircem" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-29T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@bekircem" />
+<meta name="twitter:creator" content="@Bekir Cem Ünalan" />
+<script type="application/ld+json">
+{"description":"PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı.","author":{"@type":"Person","name":"Bekir Cem Ünalan"},"@type":"BlogPosting","url":"http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/","headline":"APCu Kurulumu ve Ayarları","dateModified":"2018-01-29T00:00:00+03:00","datePublished":"2018-01-29T00:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="alternate" type="application/rss+xml" title="bekircem" href="/feed.xml">
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" rel="author" href="/">bekircem</a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">APCu Kurulumu ve Ayarları</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-01-29T00:00:00+03:00" itemprop="datePublished">
+        
+        Jan 29, 2018
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Digital Ocean üzerinde Mediawiki sistemini çalıştırdığım sunucuda yüksek <code class="highlighter-rouge">cpu load</code>  değerleri almaya başlamıştım. <code class="highlighter-rouge">APCu</code> ile cpu load değerlerini 1.20 seviyelerinden 0.20 seviyelerine çektim.</p>
+
+<p>APCu kurulumu PHP sürümünüze ve sunucu yapılandırmanıza göre değişkenlik gösterebilir. PHP 7 ve sonraki sürümler için APCu full backward desteği olmadığı için ek olarak <code class="highlighter-rouge">apcu-bc</code> eklentisini de kurmanız gerekiyor. PHP 7 üzerinde kurulum yapacaksanız başka kaynakları araştırmanız gerekiyor.</p>
+
+<p>Serverpilot ile yönettiğim sunucumda PHP 5.6 sürümü için kurulum yaptım. Rehber boyunca komutlarda kullanan <code class="highlighter-rouge">phpX.Y</code> gibi ifadelerde X ve Y değerleri yerine sürüm bilgilerini yazmalısınız.</p>
+
+<h2 id="php-54-55-ve-56-için-apcu-kurulumu">PHP 5.4, 5.5 ve 5.6 için APCu Kurulumu</h2>
+
+<p>Serverpilot ile yönetilen sunucunuza SSH ile <code class="highlighter-rouge">root</code> olarak bağlanın. Ardından aşağıdaki komutları sırasıyla çalıştırın.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get -y install gcc make autoconf libc-dev pkg-config
+sudo pecl5.Y-sp install apcu-4.0.11
+</code></pre></div></div>
+
+<p>Aşağıdaki sorular geldiğinde enter tuşunuza basıyoruz.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable full APC compatibility [yes] :
+Enable internal debugging in APCu [no] :
+</code></pre></div></div>
+
+<p>Kurulum tamamlandıktan sonra yapılandırma dosyasını oluşturmak ve PHP’yi yeniden başlatmak için sırasıyla aşağıdaki komutları çalıştırıyoruz.</p>
+
+<h2 id="kurulumu-doğrulama">Kurulumu Doğrulama</h2>
+
+<p>APCu’nun doğru bir şeklilde yüklenip yüklenmediğini aşağıdaki komutla kontrol edebilirsiniz.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>phpX.Y-sp -i | grep apcu
+</code></pre></div></div>
+
+<p>Şu şekilde bir çıktı almanız gerekiyor.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Additional .ini files parsed =&gt; /etc/phpX.Y-sp/conf.d/apcu.ini,
+apcu
+</code></pre></div></div>
+
+<h2 id="apcshm_size-değerini-artırmak"><code class="highlighter-rouge">apc.shm_size</code> Değerini Artırmak</h2>
+<p>apc.shm_size için yeni bir değer atamadan önce ilk olarak şimdiki değerini öğrenmeniz faydalı olabilir. Bunun için aşağıdaki komutu çalıştırın.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -i | grep apc.shm_size
+</code></pre></div></div>
+
+<p>Şu şekilde bir çıktı alacaksınız.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apc.shm_size =&gt; 32M =&gt; 32M
+</code></pre></div></div>
+
+<p>32M değeriyle sorun yaşadığınızı varsayalım. Bu değeri değiştirmek için php.ini dosyasına ekleme yapmamız gerekiyor.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apc.shm_size = 64M
+</code></pre></div></div>
+
+<p>Serverpilot için /etc/phpX.Y-sp/conf.d dizinindeki apcu.ini dosyasına ekleme yapabiliriz.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apc.shm_size = 64M
+</code></pre></div></div>
+
+<p>Ardından sunucumuza SSH ile root olarak bağlanarak aşadağı komutu çalıştırıyoruz ve PHP’yi yeniden başlatıyoruz.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service phpX.Y-fpm-sp restart
+</code></pre></div></div>
+
+<h2 id="apcu-monitörü-kurulumu">APCu Monitörü Kurulumu</h2>
+<p>APCu ile ilgili verileri takip etmek için resmi <a href="https://github.com/krakjoe/apcu/" target="_blank">APCu - APC</a> reposunda bulunan <a href="https://raw.githubusercontent.com/krakjoe/apcu/master/apc.php">apc.php</a> scriptini kullanabilirsiniz. Bu script bize basit ama anlamlı veriler sunacak.</p>
+
+<p>Scripti kullanmak için <a href="https://raw.githubusercontent.com/krakjoe/apcu/master/apc.php" target="_blank">apc.php</a> sayfasındaki içerikle bir <code class="highlighter-rouge">.php</code> dosyası oluşturun.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>defaults('ADMIN_USERNAME','apc'); 			// Admin Username
+defaults('ADMIN_PASSWORD','password');  	// Admin Password - CHANGE THIS TO ENABLE!!!
+</code></pre></div></div>
+
+<p>Giriş bilgilerini yukarıdaki kod blokunu bularak değiştirin. Ardından sitenizin ana dizinine atarak web browser üzerinden erişebilirsiniz.</p>
+
+<h2 id="apcu-bellek-kullanımı">APCu Bellek Kullanımı</h2>
+
+<p>Script bize kullanılan ve boş bellek değerlerini gösteriyor. Ayrıca yüzdelik olarak <code class="highlighter-rouge">cache hits</code> ve <code class="highlighter-rouge">missed hits</code> değerlerini gösteriyor. Missed hits değeri ne kadar düşükse performans için o kadar iyidir.</p>
+
+<p><img src="/images/apcu-monitor.png" alt="APCu Monitor" /></p>
+
+<h2 id="apcu-cache-fragmentation">APCu Cache Fragmentation</h2>
+
+<p><code class="highlighter-rouge">Cache fragmentation</code> değeri aşırı data yüklenmesi olduğunda anlaması daha zor bir sistem. Kısaca düşük cache fragmentation performans için daha iyidir.</p>
+
+<p><img src="/images/apcu-fragmentation.png" alt="APCu Fragmentation" /></p>
+
+<h2 id="kaynaklar-ve-i̇leri-okuma">Kaynaklar ve İleri Okuma</h2>
+
+<ol>
+  <li><a href="https://anavarre.net/how-to-monitor-and-tune-apcu/" target="_blank">How to monitor and tune APCu</a></li>
+  <li><a href="https://serverpilot.io/community/articles/how-to-install-the-php-apcu-extension.html" target="_blank">How to Install the PHP APCu Extension</a></li>
+</ol>
+
+
+  </div>
+
+  
+    
+
+  
+
+  <a class="u-url" href="/2018/01/apcu-kurulumu-ve-ayarlari/" hidden></a>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">bekircem</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            
+              Bekir Cem Ünalan
+            
+            </li>
+            
+            <li><a class="u-email" href="mailto:unalanbekircem@gmail.com">unalanbekircem@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+  
+  
+  
+  <li><a href="https://github.com/bekircem"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bekircem</span></a></li>
+  
+  
+  
+  <li><a href="https://www.twitter.com/bekircem"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">bekircem</span></a></li>
+  
+  
+  <li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li>
+</ul>
+
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Geliştirme deneyimlerimle ilgili notlarım.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

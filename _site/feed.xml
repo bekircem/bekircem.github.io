@@ -1,5 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-28T16:57:41+03:00</updated><id>http://localhost:4000/</id><title type="html">bekircem</title><subtitle>Geliştirme deneyimlerimle ilgili notlarım.
-</subtitle><author><name>Bekir Cem Ünalan</name></author><entry><title type="html">Discourse tüm mesajlarda bir string ifade değiştirmek</title><link href="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/" rel="alternate" type="text/html" title="Discourse tüm mesajlarda bir string ifade değiştirmek" /><published>2018-01-28T00:00:00+03:00</published><updated>2018-01-28T00:00:00+03:00</updated><id>http://localhost:4000/2018/01/discourse-rake-posts-kullanimi</id><content type="html" xml:base="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/">&lt;p&gt;Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse’un import script’ini kullandım. 300.000’in üzerinde mesaj ve 10.000’in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse’un ‘rake posts’ özelliğini kullandım.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-29T13:26:22+03:00</updated><id>http://localhost:4000/</id><title type="html">bekircem</title><subtitle>Geliştirme deneyimlerimle ilgili notlarım.
+</subtitle><author><name>Bekir Cem Ünalan</name></author><entry><title type="html">APCu Kurulumu ve Ayarları</title><link href="http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/" rel="alternate" type="text/html" title="APCu Kurulumu ve Ayarları" /><published>2018-01-29T00:00:00+03:00</published><updated>2018-01-29T00:00:00+03:00</updated><id>http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari</id><content type="html" xml:base="http://localhost:4000/2018/01/apcu-kurulumu-ve-ayarlari/">&lt;p&gt;Digital Ocean üzerinde Mediawiki sistemini çalıştırdığım sunucuda yüksek &lt;code class=&quot;highlighter-rouge&quot;&gt;cpu load&lt;/code&gt;  değerleri almaya başlamıştım. &lt;code class=&quot;highlighter-rouge&quot;&gt;APCu&lt;/code&gt; ile cpu load değerlerini 1.20 seviyelerinden 0.20 seviyelerine çektim.&lt;/p&gt;
+
+&lt;p&gt;APCu kurulumu PHP sürümünüze ve sunucu yapılandırmanıza göre değişkenlik gösterebilir. PHP 7 ve sonraki sürümler için APCu full backward desteği olmadığı için ek olarak &lt;code class=&quot;highlighter-rouge&quot;&gt;apcu-bc&lt;/code&gt; eklentisini de kurmanız gerekiyor. PHP 7 üzerinde kurulum yapacaksanız başka kaynakları araştırmanız gerekiyor.&lt;/p&gt;
+
+&lt;p&gt;Serverpilot ile yönettiğim sunucumda PHP 5.6 sürümü için kurulum yaptım. Rehber boyunca komutlarda kullanan &lt;code class=&quot;highlighter-rouge&quot;&gt;phpX.Y&lt;/code&gt; gibi ifadelerde X ve Y değerleri yerine sürüm bilgilerini yazmalısınız.&lt;/p&gt;
+
+&lt;h2 id=&quot;php-54-55-ve-56-için-apcu-kurulumu&quot;&gt;PHP 5.4, 5.5 ve 5.6 için APCu Kurulumu&lt;/h2&gt;
+
+&lt;p&gt;Serverpilot ile yönetilen sunucunuza SSH ile &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; olarak bağlanın. Ardından aşağıdaki komutları sırasıyla çalıştırın.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get -y install gcc make autoconf libc-dev pkg-config
+sudo pecl5.Y-sp install apcu-4.0.11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Aşağıdaki sorular geldiğinde enter tuşunuza basıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enable full APC compatibility [yes] :
+Enable internal debugging in APCu [no] :
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kurulum tamamlandıktan sonra yapılandırma dosyasını oluşturmak ve PHP’yi yeniden başlatmak için sırasıyla aşağıdaki komutları çalıştırıyoruz.&lt;/p&gt;
+
+&lt;h2 id=&quot;kurulumu-doğrulama&quot;&gt;Kurulumu Doğrulama&lt;/h2&gt;
+
+&lt;p&gt;APCu’nun doğru bir şeklilde yüklenip yüklenmediğini aşağıdaki komutla kontrol edebilirsiniz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;phpX.Y-sp -i | grep apcu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Şu şekilde bir çıktı almanız gerekiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Additional .ini files parsed =&amp;gt; /etc/phpX.Y-sp/conf.d/apcu.ini,
+apcu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;apcshm_size-değerini-artırmak&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apc.shm_size&lt;/code&gt; Değerini Artırmak&lt;/h2&gt;
+&lt;p&gt;apc.shm_size için yeni bir değer atamadan önce ilk olarak şimdiki değerini öğrenmeniz faydalı olabilir. Bunun için aşağıdaki komutu çalıştırın.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;php -i | grep apc.shm_size
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Şu şekilde bir çıktı alacaksınız.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apc.shm_size =&amp;gt; 32M =&amp;gt; 32M
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;32M değeriyle sorun yaşadığınızı varsayalım. Bu değeri değiştirmek için php.ini dosyasına ekleme yapmamız gerekiyor.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apc.shm_size = 64M
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Serverpilot için /etc/phpX.Y-sp/conf.d dizinindeki apcu.ini dosyasına ekleme yapabiliriz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apc.shm_size = 64M
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ardından sunucumuza SSH ile root olarak bağlanarak aşadağı komutu çalıştırıyoruz ve PHP’yi yeniden başlatıyoruz.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo service phpX.Y-fpm-sp restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;apcu-monitörü-kurulumu&quot;&gt;APCu Monitörü Kurulumu&lt;/h2&gt;
+&lt;p&gt;APCu ile ilgili verileri takip etmek için resmi &lt;a href=&quot;https://github.com/krakjoe/apcu/&quot; target=&quot;_blank&quot;&gt;APCu - APC&lt;/a&gt; reposunda bulunan &lt;a href=&quot;https://raw.githubusercontent.com/krakjoe/apcu/master/apc.php&quot;&gt;apc.php&lt;/a&gt; scriptini kullanabilirsiniz. Bu script bize basit ama anlamlı veriler sunacak.&lt;/p&gt;
+
+&lt;p&gt;Scripti kullanmak için &lt;a href=&quot;https://raw.githubusercontent.com/krakjoe/apcu/master/apc.php&quot; target=&quot;_blank&quot;&gt;apc.php&lt;/a&gt; sayfasındaki içerikle bir &lt;code class=&quot;highlighter-rouge&quot;&gt;.php&lt;/code&gt; dosyası oluşturun.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults('ADMIN_USERNAME','apc'); 			// Admin Username
+defaults('ADMIN_PASSWORD','password');  	// Admin Password - CHANGE THIS TO ENABLE!!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Giriş bilgilerini yukarıdaki kod blokunu bularak değiştirin. Ardından sitenizin ana dizinine atarak web browser üzerinden erişebilirsiniz.&lt;/p&gt;
+
+&lt;h2 id=&quot;apcu-bellek-kullanımı&quot;&gt;APCu Bellek Kullanımı&lt;/h2&gt;
+
+&lt;p&gt;Script bize kullanılan ve boş bellek değerlerini gösteriyor. Ayrıca yüzdelik olarak &lt;code class=&quot;highlighter-rouge&quot;&gt;cache hits&lt;/code&gt; ve &lt;code class=&quot;highlighter-rouge&quot;&gt;missed hits&lt;/code&gt; değerlerini gösteriyor. Missed hits değeri ne kadar düşükse performans için o kadar iyidir.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/apcu-monitor.png&quot; alt=&quot;APCu Monitor&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;apcu-cache-fragmentation&quot;&gt;APCu Cache Fragmentation&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache fragmentation&lt;/code&gt; değeri aşırı data yüklenmesi olduğunda anlaması daha zor bir sistem. Kısaca düşük cache fragmentation performans için daha iyidir.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/apcu-fragmentation.png&quot; alt=&quot;APCu Fragmentation&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;kaynaklar-ve-i̇leri-okuma&quot;&gt;Kaynaklar ve İleri Okuma&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://anavarre.net/how-to-monitor-and-tune-apcu/&quot; target=&quot;_blank&quot;&gt;How to monitor and tune APCu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://serverpilot.io/community/articles/how-to-install-the-php-apcu-extension.html&quot; target=&quot;_blank&quot;&gt;How to Install the PHP APCu Extension&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Bekir Cem Ünalan</name></author><category term="APCu" /><category term="PHP" /><category term="Cache" /><category term="Server" /><category term="sysadmin" /><summary type="html">Digital Ocean üzerinde Mediawiki sistemini çalıştırdığım sunucuda yüksek cpu load değerleri almaya başlamıştım. APCu ile cpu load değerlerini 1.20 seviyelerinden 0.20 seviyelerine çektim.</summary></entry><entry><title type="html">Discourse Tüm Mesajlarda Bir String İfade Değiştirmek</title><link href="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/" rel="alternate" type="text/html" title="Discourse Tüm Mesajlarda Bir String İfade Değiştirmek" /><published>2018-01-28T00:00:00+03:00</published><updated>2018-01-28T00:00:00+03:00</updated><id>http://localhost:4000/2018/01/discourse-rake-posts-kullanimi</id><content type="html" xml:base="http://localhost:4000/2018/01/discourse-rake-posts-kullanimi/">&lt;p&gt;Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse’un import script’ini kullandım. 300.000’in üzerinde mesaj ve 10.000’in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse’un ‘rake posts’ özelliğini kullandım.&lt;/p&gt;
 
 &lt;p&gt;Öncelikle SSH üzerinden sunucuya bağlanıyoruz ve Docker container’ımıza giriyoruz.&lt;/p&gt;
 
