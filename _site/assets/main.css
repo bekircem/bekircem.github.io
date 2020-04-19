@@ -492,3 +492,8 @@ table {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+/* Jekyll Avatar */
+img.avatar {
+  border-radius: 50%;
+  padding-bottom: 5px; }

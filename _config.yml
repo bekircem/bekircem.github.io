@@ -45,6 +45,7 @@ disqus:
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-avatar
 
 # Build settings
 markdown: kramdown
