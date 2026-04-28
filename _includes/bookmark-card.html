@@ -1,0 +1,27 @@
+{% assign bookmark = include.bookmark %}
+{% assign domain = bookmark.url | remove: 'https://' | remove: 'http://' | split: '/' | first %}
+
+<a class="bookmark-card" href="{{ bookmark.url }}" target="_blank" rel="noopener noreferrer">
+  {% if bookmark.image %}
+    <img class="bookmark-card__cover" src="{{ bookmark.image }}" alt="{{ bookmark.title }}" loading="lazy" onerror="this.style.display='none'">
+  {% endif %}
+  <div class="bookmark-card__body">
+    <div class="bookmark-card__meta">
+      <img
+        class="bookmark-card__favicon"
+        src="https://www.google.com/s2/favicons?domain={{ domain }}&sz=32"
+        alt=""
+        loading="lazy"
+        onerror="this.style.display='none'"
+      >
+      <span class="bookmark-card__domain">{{ domain }}</span>
+    </div>
+    <div class="bookmark-card__title">{{ bookmark.title }}</div>
+    {% if bookmark.description %}
+      <div class="bookmark-card__description">{{ bookmark.description }}</div>
+    {% endif %}
+    {% if bookmark.date %}
+      <div class="bookmark-card__date">{{ bookmark.date | date: "%d %B %Y" }}</div>
+    {% endif %}
+  </div>
+</a>
