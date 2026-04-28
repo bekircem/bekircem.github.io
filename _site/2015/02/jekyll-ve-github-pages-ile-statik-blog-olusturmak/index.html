@@ -13,32 +13,32 @@
   <meta name="twitter:title" content="Jekyll ve Github Pages ile Statik Blog Oluşturmak">
 
 
-  <meta name="twitter:url" content="http://localhost:4000/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/">
+  <meta name="twitter:url" content="https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/">
 
 
   <meta name="twitter:description" content="Jekyll ve Github Pages ile statik blog kurulumu.">
 
 
   <!-- Twitter cards metadatas -->
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Jekyll ve Github Pages ile Statik Blog Oluşturmak | bekircem</title>
-<meta name="generator" content="Jekyll v3.8.6" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Jekyll ve Github Pages ile Statik Blog Oluşturmak" />
 <meta name="author" content="Bekir Cem Ünalan" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Jekyll ve Github Pages ile statik blog kurulumu." />
 <meta property="og:description" content="Jekyll ve Github Pages ile statik blog kurulumu." />
-<link rel="canonical" href="http://localhost:4000/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/" />
-<meta property="og:url" content="http://localhost:4000/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/" />
+<link rel="canonical" href="https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/" />
+<meta property="og:url" content="https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/" />
 <meta property="og:site_name" content="bekircem" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2015-02-09T00:00:00+02:00" />
+<meta property="article:published_time" content="2015-02-09T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Jekyll ve Github Pages ile Statik Blog Oluşturmak" />
 <meta name="twitter:site" content="@bekircem" />
 <meta name="twitter:creator" content="@Bekir Cem Ünalan" />
 <script type="application/ld+json">
-{"headline":"Jekyll ve Github Pages ile Statik Blog Oluşturmak","dateModified":"2015-02-09T00:00:00+02:00","datePublished":"2015-02-09T00:00:00+02:00","author":{"@type":"Person","name":"Bekir Cem Ünalan"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/"},"url":"http://localhost:4000/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/","description":"Jekyll ve Github Pages ile statik blog kurulumu.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bekir Cem Ünalan"},"dateModified":"2015-02-09T00:00:00+00:00","datePublished":"2015-02-09T00:00:00+00:00","description":"Jekyll ve Github Pages ile statik blog kurulumu.","headline":"Jekyll ve Github Pages ile Statik Blog Oluşturmak","mainEntityOfPage":{"@type":"WebPage","@id":"https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/"},"url":"https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -83,6 +83,21 @@
             
             
           
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
         </div>
       </nav>
     
@@ -97,7 +112,7 @@
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Jekyll ve Github Pages ile Statik Blog Oluşturmak</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2015-02-09T00:00:00+02:00" itemprop="datePublished">
+      <time class="dt-published" datetime="2015-02-09T00:00:00+00:00" itemprop="datePublished">
         
         Feb 9, 2015
       </time>
@@ -109,19 +124,19 @@
 
 <h3 id="jekyll-ve-statik-blog-oluşturucular-hakkında-bazı-bilgiler">Jekyll ve Statik Blog Oluşturucular Hakkında Bazı Bilgiler</h3>
 
-<p>Wordpress ve diğer içerik yönetim sistemlerinden farklı olarak statik bloglar veritabanına ihtiyaç duymuyorlar. Bir statik blog oluşturucu olan Jekyll, veritabanı ve <code class="highlighter-rouge">PHP</code> dosyası içermiyor. Bu da statik blogların hızlı ve güvenli olmasını sağlıyor.</p>
+<p>Wordpress ve diğer içerik yönetim sistemlerinden farklı olarak statik bloglar veritabanına ihtiyaç duymuyorlar. Bir statik blog oluşturucu olan Jekyll, veritabanı ve <code class="language-plaintext highlighter-rouge">PHP</code> dosyası içermiyor. Bu da statik blogların hızlı ve güvenli olmasını sağlıyor.</p>
 
 <blockquote>
   <p>I see the future of Wordpress as a web operating system.” – Matt Mullenweg</p>
 </blockquote>
 
-<p>Genel çalışma mantığı olarak statik blog oluşturucular <code class="highlighter-rouge">Markdown</code> diliyle yazılmış içerikleri yayınlanmadan önce HTML sayfasına çeviriyorlar. Bu yüzden de <code class="highlighter-rouge">NodeJS</code>, <code class="highlighter-rouge">Ruby</code> ve <code class="highlighter-rouge">Ruby GEM</code> gibi farklı gereksinimlere ihtiyaç duyuyorlar. Github Pages sayesinde  bu gereksinimleri atlamak mümkün olsa da (en azından <code class="highlighter-rouge">Jekyll</code> için) statik blog oluşturucuların yerel makinelere de mutlaka kurulması gerekiyor. Windows üzerinde bazı aşamalarında uyumluluk sorunları yaşadığım ve bir an önce yayına alma konusunda heyecanlı olduğum için gereksinimlerin konfigürasyonunu henüz tam olarak yapmadan Github Pages’i adeta Jekyll’nin <code class="highlighter-rouge">CMS</code> bileşeni olarak kullanarak blogu yayına aldım.</p>
+<p>Genel çalışma mantığı olarak statik blog oluşturucular <code class="language-plaintext highlighter-rouge">Markdown</code> diliyle yazılmış içerikleri yayınlanmadan önce HTML sayfasına çeviriyorlar. Bu yüzden de <code class="language-plaintext highlighter-rouge">NodeJS</code>, <code class="language-plaintext highlighter-rouge">Ruby</code> ve <code class="language-plaintext highlighter-rouge">Ruby GEM</code> gibi farklı gereksinimlere ihtiyaç duyuyorlar. Github Pages sayesinde  bu gereksinimleri atlamak mümkün olsa da (en azından <code class="language-plaintext highlighter-rouge">Jekyll</code> için) statik blog oluşturucuların yerel makinelere de mutlaka kurulması gerekiyor. Windows üzerinde bazı aşamalarında uyumluluk sorunları yaşadığım ve bir an önce yayına alma konusunda heyecanlı olduğum için gereksinimlerin konfigürasyonunu henüz tam olarak yapmadan Github Pages’i adeta Jekyll’nin <code class="language-plaintext highlighter-rouge">CMS</code> bileşeni olarak kullanarak blogu yayına aldım.</p>
 
 <h3 id="github-pages-ile-jekyll-kurulumu">Github Pages ile Jekyll Kurulumu</h3>
 
-<p>Jekyll’yi Github Pages ile kullanmak için <a href="http://www.github.com/barryclark/jekyll-now">Jekyll Now</a> sayfasına gidin ve sayfanın sağ üst köşesindeki <code class="highlighter-rouge">Fork</code> butonuna tıklayarak temanın deposunu kendi Github hesabınıza kopyalayın. <a href="https://github.com/jekyll/jekyll/wiki/Themes">Şu listedeki</a> Jekyll temalarından istediğinizi seçerek aynı işlemi yapabilirsiniz. Depoyu fork ettikten sonra sağ kısımdaki <code class="highlighter-rouge">Settings</code>’e tıklayın ve depo adını <code class="highlighter-rouge">kullaniciadiniz.github.io</code> olarak değiştirin. Blogunuzu kendi alan adınız ile kullanmak için deponuzdaki <code class="highlighter-rouge">CNAME</code> dosyasının içerisine alan adınızı eklemeli ve ardından alın adı sağlayıcınızın ayar panelinden <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">gerekli host ayarlarını</a> yapmalısınız.</p>
+<p>Jekyll’yi Github Pages ile kullanmak için <a href="http://www.github.com/barryclark/jekyll-now">Jekyll Now</a> sayfasına gidin ve sayfanın sağ üst köşesindeki <code class="language-plaintext highlighter-rouge">Fork</code> butonuna tıklayarak temanın deposunu kendi Github hesabınıza kopyalayın. <a href="https://github.com/jekyll/jekyll/wiki/Themes">Şu listedeki</a> Jekyll temalarından istediğinizi seçerek aynı işlemi yapabilirsiniz. Depoyu fork ettikten sonra sağ kısımdaki <code class="language-plaintext highlighter-rouge">Settings</code>’e tıklayın ve depo adını <code class="language-plaintext highlighter-rouge">kullaniciadiniz.github.io</code> olarak değiştirin. Blogunuzu kendi alan adınız ile kullanmak için deponuzdaki <code class="language-plaintext highlighter-rouge">CNAME</code> dosyasının içerisine alan adınızı eklemeli ve ardından alın adı sağlayıcınızın ayar panelinden <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">gerekli host ayarlarını</a> yapmalısınız.</p>
 
-<p>İnternet tarayıcısından bloga girdiğinizde “You’re up and running” yazısını görüyorsanız Jekyll kullanıma hazır demektir. Bundan sonrası için başlangıç olarak Jekyll’nin dizin yapısını anlamaya çalışın. Depodaki <code class="highlighter-rouge">_config.yml</code> dosyası blogunuzun ana ayaları ile birlikte tüm temel ayarların bulunduğu dosyadır. Bu dosyadan anasayfa başlığı, açıklama ve etiketlerini belirleyebilir, bazı ayarları açık kapatabilir ve daha birçok şey yapabilirsiniz. <code class="highlighter-rouge">_posts</code> dizini blog yazılarınızın bulunduğu dizindir. Bu dizine girdiğinizde <code class="highlighter-rouge">Markdown</code> yani <code class="highlighter-rouge">.md</code> uzantılı örnek yazılar listelenelir, sistemi daha iyi anlamak için o dosyaları incelemenizde fayda var. Bu dizine, şablona uyarak yeni bir dosya eklediğinizde blog yazınız da blogunuza eklenmiş olur.</p>
+<p>İnternet tarayıcısından bloga girdiğinizde “You’re up and running” yazısını görüyorsanız Jekyll kullanıma hazır demektir. Bundan sonrası için başlangıç olarak Jekyll’nin dizin yapısını anlamaya çalışın. Depodaki <code class="language-plaintext highlighter-rouge">_config.yml</code> dosyası blogunuzun ana ayaları ile birlikte tüm temel ayarların bulunduğu dosyadır. Bu dosyadan anasayfa başlığı, açıklama ve etiketlerini belirleyebilir, bazı ayarları açık kapatabilir ve daha birçok şey yapabilirsiniz. <code class="language-plaintext highlighter-rouge">_posts</code> dizini blog yazılarınızın bulunduğu dizindir. Bu dizine girdiğinizde <code class="language-plaintext highlighter-rouge">Markdown</code> yani <code class="language-plaintext highlighter-rouge">.md</code> uzantılı örnek yazılar listelenelir, sistemi daha iyi anlamak için o dosyaları incelemenizde fayda var. Bu dizine, şablona uyarak yeni bir dosya eklediğinizde blog yazınız da blogunuza eklenmiş olur.</p>
 
 <p>Konuyla ilgili kaynaklar:</p>
 
@@ -136,6 +151,25 @@
 
   
     
+
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/';
+      this.page.identifier = 'https://bekircem.github.io/2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://bekircem.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
   
 
@@ -162,7 +196,7 @@
             
             </li>
             
-            <li><a class="u-email" href="mailto:unalanbekircem@gmail.com">unalanbekircem@gmail.com</a></li>
+            <li><a class="u-email" href="mailto:bekircem@duck.com">bekircem@duck.com</a></li>
             
         </ul>
       </div>
@@ -173,7 +207,7 @@
   
   
   <li><a href="https://github.com/bekircem"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">bekircem</span></a></li>
-  
+  <li><a href="https://instagram.com/bekircem"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">bekircem</span></a></li>
   
   
   <li><a href="https://www.twitter.com/bekircem"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">bekircem</span></a></li>
