@@ -1,11 +1,12 @@
 ---
-layout: post
 title: Statik Siteler için İletişim Formu
 description: "Statik siteler için veritabanı, PHP ve Javascript gerektirmeyen iletişim formu uygulaması: Formspree."
-keywords: "Jekyll, Formspree"
-tags: [Jekyll]
-redirect_from: "/2015/07/10/statik-siteler-icin-iletisim-formu/"
-published: true
+date: 2015-07-10 00:00:00 +0300
+categories: [Jekyll]
+tags: [jekyll, formspree]
+redirect_from:
+  - /2015/07/10/statik-siteler-icin-iletisim-formu/
+  - /2015/07/statik-siteler-icin-iletisim-formu/
 ---
 
 Jekyll gibi statik site oluşturucularla oluşturulan web sitelerinde statik sitenin mantığı dolayısıyla veritabanı kullanmıyoruz. [Formspree](http://formspree.io/){:target="_blank"}, sunucunuza herhangi bir ek gereksinim yaratmandan iletişim formu oluşturmanızı sağlayan bir fikir. Formspree sayesinde fonksiyonel HTML iletişim formlarınızı PHP veya Javascript kullanmak zorunda kalmadan oluşturabiliyorsunuz.

@@ -1,13 +1,12 @@
 ---
-layout: post
 title: Jekyll ve Github Pages ile Statik Blog Oluşturmak
 description: Jekyll ve Github Pages ile statik blog kurulumu.
-keywords: "Jekyll, Github Pages"
-tags: 
-  - Jekyll
-  - Github Pages
-redirect_from: "/2015/02/09/jekyll-ve-github-pages-ile-statik-blog-olusturmak/"
-published: true
+date: 2015-02-09 00:00:00 +0300
+categories: [Jekyll]
+tags: [jekyll, github-pages]
+redirect_from:
+  - /2015/02/09/jekyll-ve-github-pages-ile-statik-blog-olusturmak/
+  - /2015/02/jekyll-ve-github-pages-ile-statik-blog-olusturmak/
 ---
 
 

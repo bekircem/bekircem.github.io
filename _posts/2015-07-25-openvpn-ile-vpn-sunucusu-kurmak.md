@@ -1,15 +1,12 @@
 ---
-layout: post
 title: OpenVPN ile VPN Sunucusu Kurmak
 description: Açık kaynak kodlu OpenVPN teknolojisi ile kendi VPN servisinizi oluşturun.
-keywords: 'VPN, VPS, Digital Ocean, OpenVPN'
-tags:
-  - VPN
-  - VPS
-  - Digital Ocean
-  - OpenVPN
-redirect_from: /2015/07/25/openvpn-ile-vpn-sunucusu-kurmak/
-published: true
+date: 2015-07-25 00:00:00 +0300
+categories: [Linux, VPN]
+tags: [vpn, vps, digitalocean, openvpn]
+redirect_from:
+  - /2015/07/25/openvpn-ile-vpn-sunucusu-kurmak/
+  - /2015/07/openvpn-ile-vpn-sunucusu-kurmak/
 ---
 
 

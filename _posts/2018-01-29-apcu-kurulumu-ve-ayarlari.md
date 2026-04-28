@@ -1,9 +1,9 @@
 ---
-layout: post
 title: "APCu Kurulumu ve Ayarları"
 description: "PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı."
-keywords: "APCu,PHP,Cache,Server,sysadmin"
-tags: [APCu,PHP,Cache,Server,sysadmin]
+date: 2018-01-29 00:00:00 +0300
+categories: [PHP, Server]
+tags: [apcu, php, cache, server, sysadmin]
 ---
 
 Digital Ocean üzerinde Mediawiki sistemini çalıştırdığım sunucuda yüksek `cpu load`  değerleri almaya başlamıştım. `APCu` ile cpu load değerlerini 1.20 seviyelerinden 0.20 seviyelerine çektim.

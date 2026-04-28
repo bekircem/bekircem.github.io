@@ -1,14 +1,12 @@
 ---
-layout: post
 title: Ubuntu Android SDK Kurulumu
 description: Ubuntu (Debian) üzerinde Android SDK kurulumu ve PATH ayarları.
-keywords: "Android, Linux, Ubuntu"
-tags: 
-  - Android
-  - Linux
-  - Ubuntu
-redirect_from: "/2015/02/14/ubuntu-android-sdk-kurulumu/"
-published: true
+date: 2015-02-14 00:00:00 +0300
+categories: [Linux]
+tags: [android, linux, ubuntu]
+redirect_from:
+  - /2015/02/14/ubuntu-android-sdk-kurulumu/
+  - /2015/02/ubuntu-android-sdk-kurulumu/
 ---
 
 

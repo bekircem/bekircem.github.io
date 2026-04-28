@@ -1,9 +1,9 @@
-﻿---
-layout: post
+---
 title: "Discourse Tüm Mesajlarda Bir String İfade Değiştirmek"
 description: "Discourse rake posts özelliğini kullanarak tüm mesajlarda bir string ifadeyi değiştirmek"
-keywords: "Discourse, Ruby"
-tags: [Discourse]
+date: 2018-01-28 00:00:00 +0300
+categories: [Discourse]
+tags: [discourse, ruby]
 ---
 
 Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse'un import script'ini kullandım. 300.000'in üzerinde mesaj ve 10.000'in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse'un 'rake posts' özelliğini kullandım. 
