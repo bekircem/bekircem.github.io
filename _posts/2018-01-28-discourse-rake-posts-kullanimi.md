@@ -6,28 +6,46 @@ categories: [Discourse]
 tags: [discourse, ruby]
 ---
 
-Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse'un import script'ini kullandım. 300.000'in üzerinde mesaj ve 10.000'in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse'un 'rake posts' özelliğini kullandım. 
+Mybb forum yazılımından Discourse yazılımına geçiş yapmak için Discourse'un import script'ini kullandım. 300.000'in üzerinde mesaj ve 10.000'in üzerinde konuyu Discourse yazılımına aktarmak zorlu bir süreç oldu. Aktarım sonrasında Mybb mesaj editörüyle oluşturulmuş bazı mesaj stillendirme etiketleri sorun çıkardı. Bu etiketlerin tamamını temizlemek için Discourse'un `rake posts` özelliğini kullandım.
 
-Öncelikle SSH üzerinden sunucuya bağlanıyoruz ve Docker container'ımıza giriyoruz.
+## Hazırlık
 
-    cd /var/discourse
-    ./launcher enter app
+Öncelikle SSH üzerinden sunucuya bağlanıp Docker container'a giriyoruz:
 
-Docker container'ımıza giriş yaptıktan sonra ihtiyacımıza göre kullanabileceğimiz iki farklı rake posts komutu var. String ifadeyi başka bir string ifadeyle değiştirmek istiyorsak remap, string ifadeyi silmek istiyorsak delete_word kullanacağız.
+```bash
+cd /var/discourse
+./launcher enter app
+```
 
-Spesifik bir string ifadesini değiştirmek
+## Rake Posts Komutları
 
-    rake posts:remap["bul","degistir"]
+Container'a girdikten sonra ihtiyaca göre iki farklı komut kullanılabilir:
+
+- **`remap`** — bir string ifadeyi başka bir string ifadeyle değiştirmek için
+- **`delete_word`** — bir string ifadeyi silmek için
+
+### String İfadeyi Değiştirmek
+
+```bash
+rake posts:remap["bul","degistir"]
+```
 
 Örnek:
 
-    rake posts:remap[":slightly_smiling:",":slight_smile:"]
-    
-Bir string’i silmek için delete_word kullanıyoruz.
+```bash
+rake posts:remap[":slightly_smiling:",":slight_smile:"]
+```
 
-	rake posts:delete_word["silinecek-string"]
+### String İfadeyi Silmek
 
-Değiştirmek ya da silmek istediğimiz string virgül içeriyorsa virgülün komut işlemi görmesini engellemek için “\” kullanmamız gerekiyor.
+```bash
+rake posts:delete_word["silinecek-string"]
+```
 
-	rake posts: delete_word[“elma\,\ armut”]
+## Özel Karakter İçeren String'ler
 
+Değiştirmek ya da silmek istediğiniz string virgül içeriyorsa, virgülün komut işlemi görmesini engellemek için `\` karakteri kullanın:
+
+```bash
+rake posts:delete_word["elma\,\ armut"]
+```
