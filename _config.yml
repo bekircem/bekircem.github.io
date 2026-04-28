@@ -45,7 +45,7 @@ social_preview_image:
 toc: true
 
 comments:
-  provider: disqus
+  provider:
   disqus:
     shortname: bekircem
 
