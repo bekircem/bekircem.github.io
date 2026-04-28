@@ -26,9 +26,11 @@ Ubuntu'da (veya Debian tabanlı herhangi bir Linux işletim sisteminde) Android 
 8. Terminalde `cd ~/android-sdk-linux/tools` komutunu ve ardından `./android` komutunu çalıştırın. Eğer işlemleri doğru yaptıysanız Android SDK Manager'i göreceksiniz.
 9. Terminalde `sudo gedit ~/.bashrc` komutunu çalıştırın ve açılan sayfanın en üstüne aşağıdaki kodları ekleyin.
 
-{% highlight bash %}#AndroidDev PATH
+```bash
+#AndroidDev PATH
 export PATH=${PATH}:~/android-sdk-linux/tools
-export PATH=${PATH}:~/android-sdk-linux/platform-tools{% endhighlight %}
+export PATH=${PATH}:~/android-sdk-linux/platform-tools
+```
 
 
 10. Sayfayı kaydedip kapatın.
