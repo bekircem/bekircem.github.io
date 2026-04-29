@@ -1,5 +1,7 @@
 ---
 layout: default
+panel_includes:
+  - bookmark-panel
 ---
 
 {% include lang.html %}
@@ -137,16 +139,4 @@ layout: default
 
 {% if paginator.total_pages > 1 %}
   {% include post-paginator.html %}
-{% endif %}
-
-{% if site.data.bookmarks.size > 0 %}
-  <div id="bookmarks" class="px-xl-1 mt-5">
-    {% include bookmarks-styles.html %}
-    <h2 class="post-tag me-2">Okuduklarım</h2>
-    <div class="bookmark-grid">
-      {% for bookmark in site.data.bookmarks %}
-        {% include bookmark-card.html bookmark=bookmark %}
-      {% endfor %}
-    </div>
-  </div>
 {% endif %}
