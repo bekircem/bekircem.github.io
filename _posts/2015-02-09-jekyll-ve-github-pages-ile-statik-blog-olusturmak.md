@@ -1,4 +1,5 @@
 ---
+published: false
 title: Jekyll ve Github Pages ile Statik Blog Oluşturmak
 description: Jekyll ve Github Pages ile statik blog kurulumu.
 date: 2015-02-09 00:00:00 +0300

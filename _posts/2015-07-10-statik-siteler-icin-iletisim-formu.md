@@ -1,4 +1,5 @@
 ---
+published: false
 title: Statik Siteler için İletişim Formu
 description: "Statik siteler için veritabanı, PHP ve Javascript gerektirmeyen iletişim formu uygulaması: Formspree."
 date: 2015-07-10 00:00:00 +0300

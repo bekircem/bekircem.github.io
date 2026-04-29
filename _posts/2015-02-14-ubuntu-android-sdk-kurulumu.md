@@ -1,4 +1,5 @@
 ---
+published: false
 title: Ubuntu Android SDK Kurulumu
 description: Ubuntu (Debian) üzerinde Android SDK kurulumu ve PATH ayarları.
 date: 2015-02-14 00:00:00 +0300

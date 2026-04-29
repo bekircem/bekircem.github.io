@@ -1,4 +1,5 @@
 ---
+published: false
 title: OpenVPN ile VPN Sunucusu Kurmak
 description: Açık kaynak kodlu OpenVPN teknolojisi ile kendi VPN servisinizi oluşturun.
 date: 2015-07-25 00:00:00 +0300

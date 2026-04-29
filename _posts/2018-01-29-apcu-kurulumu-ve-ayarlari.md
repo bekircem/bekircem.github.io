@@ -1,4 +1,5 @@
 ---
+published: false
 title: "APCu Kurulumu ve Ayarları"
 description: "PHP5.X sürümlerinde APCu kurulumu, ayarları ve APCu monitörünün kullanımı."
 date: 2018-01-29 00:00:00 +0300

@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Discourse Tüm Mesajlarda Bir String İfade Değiştirmek"
 description: "Discourse rake posts özelliğini kullanarak tüm mesajlarda bir string ifadeyi değiştirmek"
 date: 2018-01-28 00:00:00 +0300
