@@ -2,19 +2,3 @@
   url: "https://api.omarshehata.me/substack-proxy/articles/jmarriott-substack-com-p-the-dawn-of-the-post-literate-society-aa1.html"
   description: "Toplumun okuma kültüründen uzaklaşmasını ve görsel/işitsel içeriklerin yazılı dili yerinden ettiği yeni dönemi ele alan bir Substack yazısı."
   date: 2026-04-29
-
-- title: "You Are Not Google"
-  url: "https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb"
-  description: "Bir teknolojiyi kullanmadan önce neden kullandığını bilmeden büyük şirketleri körü körüne taklit etmenin tehlikeleri üzerine."
-  date: 2026-04-20
-
-- title: "The Grug Brained Developer"
-  url: "https://grugbrain.dev"
-  description: "Basitliği savunan, karmaşıklıkla savaşan yazılımcının manifestosu. Grug complexity not like."
-  date: 2026-04-15
-
-- title: "Things I Wish I'd Known About CSS"
-  url: "https://daveceddia.com/css-what-i-wish-i-knew/"
-  description: "CSS öğrenme sürecini kolaylaştıracak temel kavramlar ve zihinsel modeller."
-  date: 2026-04-10
-  image: "https://daveceddia.com/images/css-wish-knew.png"
